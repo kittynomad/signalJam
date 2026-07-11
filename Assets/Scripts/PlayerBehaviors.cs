@@ -7,6 +7,9 @@ public class PlayerBehaviors : MonoBehaviour
 
     [SerializeField] private LayerMask _solidLayer;
 
+    [SerializeField] private SpriteRenderer _sR;
+    [SerializeField] private Animator _anim;
+
     private PlayerController pc;
     private Rigidbody2D rb;
     private Collider2D coll;
@@ -21,6 +24,20 @@ public class PlayerBehaviors : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocityX = pc.MovementDirection.x * _runSpeed;
+        if (pc.MovementDirection.x == -1)
+        {
+            _sR.flipX = true;
+            _anim.SetBool("IsMoving", true);
+        }
+        else if (pc.MovementDirection.x == 1)
+        {
+            _sR.flipX = false;
+            _anim.SetBool("IsMoving", true);
+        }
+        else
+        {
+            _anim.SetBool("IsMoving", false);
+        }
     }
 
     public void JumpBehavior()
