@@ -18,4 +18,17 @@ public class PlayerBehaviors : MonoBehaviour
     {
         rb.linearVelocityX = pc.MovementDirection.x * _runSpeed;
     }
+
+    public void JumpBehavior()
+    {
+        if(IsGrounded())
+        {
+            rb.linearVelocityY = _jumpSpeed;
+        }
+    }
+
+    public bool IsGrounded()
+    {
+        return true;
+    }
 }

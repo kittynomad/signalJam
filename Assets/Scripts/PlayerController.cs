@@ -18,4 +18,9 @@ public class PlayerController : MonoBehaviour
     {
         movementDirection = iVal.Get<Vector2>();
     }
+
+    public void OnJump()
+    {
+        pb.JumpBehavior();
+    }
 }

@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviors
   _runSpeed: 10
-  _jumpSpeed: 0
+  _jumpSpeed: 15
 --- !u!114 &5141467561210022427
 MonoBehaviour:
   m_ObjectHideFlags: 0
