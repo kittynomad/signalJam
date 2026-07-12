@@ -16766,7 +16766,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraTrackingZone
   _playerFollowStrengthX: 1
   _playerFollowStrengthY: 1
-  _cameraDistance: -20
+  _velocityInfluence: 0.35
+  _cameraDistance: -15
 --- !u!61 &926769671
 BoxCollider2D:
   m_ObjectHideFlags: 0

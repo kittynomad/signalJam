@@ -19,8 +19,12 @@ public class PlayerController : MonoBehaviour
         movementDirection = iVal.Get<Vector2>();
     }
 
-    public void OnJump()
+    public void OnJump(InputValue iVal)
     {
-        pb.JumpBehavior();
+        Debug.Log(iVal.Get<float>());
+        if (iVal.Get<float>() == 1)
+            pb.JumpBehavior();
+        else if (iVal.Get<float>() == 0)
+            pb.EndJumpBehavior();
     }
 }
