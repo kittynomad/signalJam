@@ -34,6 +34,7 @@ public class PlayerBehaviors : MonoBehaviour
     {
         if(IsGrounded())
         {
+            _anim.Play("PlayerJumpStart");
             jumpHeld = true;
             rb.linearVelocityY = _jumpSpeed;
         }
@@ -43,7 +44,7 @@ public class PlayerBehaviors : MonoBehaviour
     {
         jumpHeld = false;
         if (rb.linearVelocityY > 0)
-            rb.linearVelocityY = rb.linearVelocityY / 2;
+            rb.linearVelocityY = 0;
     }
 
     public bool IsGrounded()
@@ -55,9 +56,7 @@ public class PlayerBehaviors : MonoBehaviour
 
     private void UpdateAnimator()
     {
-        //PIERCE, MAKE THE JUMP ONLY GO AS LONG AS THE PLAYER IS HOLDING JUMP
-        //FIND SOME WAY TO GET THAT VARIABLE FOR IF IT'S BEING HELD THEN PUT THIS HERE:
-        _anim.SetBool("JumpHeld", jumpHeld);
+        _anim.SetFloat("YSpeed", rb.linearVelocityY);
         _anim.SetBool("IsGrounded", IsGrounded());
 
         if (pc.MovementDirection.x == -1)
