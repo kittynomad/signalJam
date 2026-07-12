@@ -23,25 +23,9 @@ public class PlayerBehaviors : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //PIERCE, MAKE THE JUMP ONLY GO AS LONG AS THE PLAYER IS HOLDING JUMP
-        //FIND SOME WAY TO GET THAT VARIABLE FOR IF IT'S BEING HELD THEN PUT THIS HERE:
-        //_anim.SetBool("JumpHeld", [INSERT VARIABLE]);
-        _anim.SetBool("IsGrounded", IsGrounded());
+        
         rb.linearVelocityX = pc.MovementDirection.x * _runSpeed;
-        if (pc.MovementDirection.x == -1)
-        {
-            _sR.flipX = true;
-            _anim.SetBool("IsMoving", true);
-        }
-        else if (pc.MovementDirection.x == 1)
-        {
-            _sR.flipX = false;
-            _anim.SetBool("IsMoving", true);
-        }
-        else
-        {
-            _anim.SetBool("IsMoving", false);
-        }
+        UpdateAnimator();
     }
 
     public void JumpBehavior()
@@ -57,5 +41,28 @@ public class PlayerBehaviors : MonoBehaviour
         //check if grounded (duh)
         bool hg = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, _solidLayer);
         return hg;
+    }
+
+    private void UpdateAnimator()
+    {
+        //PIERCE, MAKE THE JUMP ONLY GO AS LONG AS THE PLAYER IS HOLDING JUMP
+        //FIND SOME WAY TO GET THAT VARIABLE FOR IF IT'S BEING HELD THEN PUT THIS HERE:
+        //_anim.SetBool("JumpHeld", [INSERT VARIABLE]);
+        _anim.SetBool("IsGrounded", IsGrounded());
+
+        if (pc.MovementDirection.x == -1)
+        {
+            _sR.flipX = true;
+            _anim.SetBool("IsMoving", true);
+        }
+        else if (pc.MovementDirection.x == 1)
+        {
+            _sR.flipX = false;
+            _anim.SetBool("IsMoving", true);
+        }
+        else
+        {
+            _anim.SetBool("IsMoving", false);
+        }
     }
 }
