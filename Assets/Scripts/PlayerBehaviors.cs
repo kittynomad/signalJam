@@ -23,6 +23,10 @@ public class PlayerBehaviors : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //PIERCE, MAKE THE JUMP ONLY GO AS LONG AS THE PLAYER IS HOLDING JUMP
+        //FIND SOME WAY TO GET THAT VARIABLE FOR IF IT'S BEING HELD THEN PUT THIS HERE:
+        //_anim.SetBool("JumpHeld", [INSERT VARIABLE]);
+        _anim.SetBool("IsGrounded", IsGrounded());
         rb.linearVelocityX = pc.MovementDirection.x * _runSpeed;
         if (pc.MovementDirection.x == -1)
         {
