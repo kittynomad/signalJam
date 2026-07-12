@@ -14,6 +14,8 @@ public class PlayerBehaviors : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D coll;
 
+    private bool jumpHeld = false;
+
     private void Start()
     {
         pc = gameObject.GetComponent<PlayerController>();
@@ -32,8 +34,16 @@ public class PlayerBehaviors : MonoBehaviour
     {
         if(IsGrounded())
         {
+            jumpHeld = true;
             rb.linearVelocityY = _jumpSpeed;
         }
+    }
+
+    public void EndJumpBehavior()
+    {
+        jumpHeld = false;
+        if (rb.linearVelocityY > 0)
+            rb.linearVelocityY = rb.linearVelocityY / 2;
     }
 
     public bool IsGrounded()
@@ -47,7 +57,7 @@ public class PlayerBehaviors : MonoBehaviour
     {
         //PIERCE, MAKE THE JUMP ONLY GO AS LONG AS THE PLAYER IS HOLDING JUMP
         //FIND SOME WAY TO GET THAT VARIABLE FOR IF IT'S BEING HELD THEN PUT THIS HERE:
-        //_anim.SetBool("JumpHeld", [INSERT VARIABLE]);
+        _anim.SetBool("JumpHeld", jumpHeld);
         _anim.SetBool("IsGrounded", IsGrounded());
 
         if (pc.MovementDirection.x == -1)
