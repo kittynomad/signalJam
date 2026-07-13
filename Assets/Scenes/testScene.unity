@@ -16766,7 +16766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraTrackingZone
   _playerFollowStrengthX: 1
   _playerFollowStrengthY: 1
-  _velocityInfluence: 0.35
+  _velocityInfluence: 0.25
   _cameraDistance: -15
 --- !u!61 &926769671
 BoxCollider2D:
@@ -17323,7 +17323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1594518656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17428,7 +17428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1895212865
 Grid:
   m_ObjectHideFlags: 0
