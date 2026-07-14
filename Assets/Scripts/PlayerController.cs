@@ -21,10 +21,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputValue iVal)
     {
-        Debug.Log(iVal.Get<float>());
+        //Debug.Log(iVal.Get<float>());
         if (iVal.Get<float>() == 1)
             pb.JumpBehavior();
         else if (iVal.Get<float>() == 0)
             pb.EndJumpBehavior();
+    }
+
+    public void OnInteract(InputValue iVal)
+    {
+        print("interact");
+        pb.InteractBehavior();
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class EventInteractible : InteractibleEntity
 {
-    [SerializeField] private UnityAction _triggeredActions;
+    [SerializeField] private UnityEvent _triggeredActions;
     [SerializeField] private bool _reusable = true;
 
     private LineRenderer lr;
@@ -32,7 +32,7 @@ public class EventInteractible : InteractibleEntity
         if (worked)
         {
             player = collision.gameObject;
-            _triggeredActions.Invoke();
+            
         }
 
         return worked;
@@ -45,6 +45,12 @@ public class EventInteractible : InteractibleEntity
         lr.enabled = connected;
 
         return worked;
+    }
+
+    public override void OnInteract(PlayerBehaviors pb)
+    {
+        base.OnInteract(pb);
+        _triggeredActions.Invoke();
     }
 
 

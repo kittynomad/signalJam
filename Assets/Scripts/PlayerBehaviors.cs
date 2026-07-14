@@ -94,7 +94,6 @@ public class PlayerBehaviors : MonoBehaviour
 
     public void InteractBehavior()
     {
-        Debug.Log("interact behgavior");
         //broadcast interactAction if it has subscribers
         if (interactAction != null)
         {
