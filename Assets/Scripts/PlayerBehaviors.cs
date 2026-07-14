@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-public class PlayerBehaviors : MonoBehaviour
+public class PlayerBehaviors : MonoBehaviour, IKillable
 {
     [SerializeField] private float _runSpeed;
     [SerializeField] private float _jumpSpeed;
@@ -100,5 +100,17 @@ public class PlayerBehaviors : MonoBehaviour
             interactAction?.Invoke(this);
         }
 
+    }
+
+    public bool OnDamage(float damageAmount = 1, GameObject damageSource = null)
+    {
+        //we are Killing and Killing and Killing
+        OnKill(damageSource);
+        return true;
+    }
+
+    public void OnKill(GameObject damageSource = null)
+    {
+        Respawn();
     }
 }
