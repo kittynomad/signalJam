@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class PlayerBehaviors : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerBehaviors : MonoBehaviour
 
     private bool jumpHeld = false;
     private Vector2 lastSafePosition;
+
+    public Action<PlayerBehaviors> interactAction;
 
     public Vector2 LastSafePosition { get => lastSafePosition; set => lastSafePosition = value; }
 
@@ -87,5 +90,16 @@ public class PlayerBehaviors : MonoBehaviour
     public void Respawn()
     {
         transform.position = lastSafePosition;
+    }
+
+    public void InteractBehavior()
+    {
+        Debug.Log("interact behgavior");
+        //broadcast interactAction if it has subscribers
+        if (interactAction != null)
+        {
+            interactAction?.Invoke(this);
+        }
+
     }
 }
