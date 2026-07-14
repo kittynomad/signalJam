@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EventInteractible : InteractibleEntity
 {
+    [SerializeField] private UnityAction _triggeredActions;
+    [SerializeField] private bool _reusable = true;
+
     private LineRenderer lr;
     private bool connected = false;
     private GameObject player;
@@ -28,6 +32,7 @@ public class EventInteractible : InteractibleEntity
         if (worked)
         {
             player = collision.gameObject;
+            _triggeredActions.Invoke();
         }
 
         return worked;
