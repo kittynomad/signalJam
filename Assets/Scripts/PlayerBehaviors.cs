@@ -15,12 +15,16 @@ public class PlayerBehaviors : MonoBehaviour
     private Collider2D coll;
 
     private bool jumpHeld = false;
+    private Vector2 lastSafePosition;
+
+    public Vector2 LastSafePosition { get => lastSafePosition; set => lastSafePosition = value; }
 
     private void Start()
     {
         pc = gameObject.GetComponent<PlayerController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         coll = gameObject.GetComponent<Collider2D>();
+        lastSafePosition = transform.position;
     }
 
     private void FixedUpdate()
@@ -73,5 +77,15 @@ public class PlayerBehaviors : MonoBehaviour
         {
             _anim.SetBool("IsMoving", false);
         }
+    }
+
+    public void UpdateSafePosition()
+    {
+        lastSafePosition = transform.position;
+    }
+
+    public void Respawn()
+    {
+        transform.position = lastSafePosition;
     }
 }
