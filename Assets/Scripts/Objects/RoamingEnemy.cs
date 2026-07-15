@@ -70,7 +70,17 @@ public class RoamingEnemy : MonoBehaviour, IKillable
 
     public void OnKill(GameObject damageSource = null)
     {
-        KilledAction.Invoke(this);
+        if(KilledAction != null)
+        {
+            KilledAction?.Invoke(this);
+        }
+        
         Destroy(gameObject);
+    }
+
+    public void SetTargetPoints(GameObject[] points)
+    {
+        targetPosIndex = 0;
+        _moveToPoints = points;
     }
 }
