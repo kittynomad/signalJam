@@ -26,13 +26,13 @@ public class EventInteractible : InteractibleEntity
     public override bool TrySubscribeInteraction(Collider2D collision)
     {
         bool worked = base.TrySubscribeInteraction(collision);
-        connected = worked;
-        lr.enabled = connected;
+        
 
         if (worked)
         {
             player = collision.gameObject;
-            
+            connected = worked;
+            lr.enabled = connected;
         }
 
         return worked;
@@ -41,7 +41,7 @@ public class EventInteractible : InteractibleEntity
     public override bool TryUnsubscribeInteraction(Collider2D collision)
     {
         bool worked = base.TryUnsubscribeInteraction(collision);
-        connected = !worked;
+        if (worked) connected = false;
         lr.enabled = connected;
 
         return worked;
