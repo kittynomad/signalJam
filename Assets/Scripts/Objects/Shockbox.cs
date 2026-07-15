@@ -9,6 +9,7 @@ public class Shockbox : BasicTeleporter
     public void ActivateShockbox()
     {
         base.TeleportPlayer();
+        base.TeleportLocation.GetComponent<EventInteractible>().StartCooldown();
         StartCoroutine(ShockboxCoroutine());
     }
 

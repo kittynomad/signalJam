@@ -265,6 +265,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _reusable: 1
+  _cooldownTime: 0.75
 --- !u!120 &1767052192988672130
 LineRenderer:
   serializedVersion: 3
