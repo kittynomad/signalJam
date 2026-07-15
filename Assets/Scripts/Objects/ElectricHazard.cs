@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ElectricHazard : MonoBehaviour
 {
-    bool isToggledOn = false;
+    [SerializeField] bool isToggledOn = false;
 
     public void ToggleActive()
     {
