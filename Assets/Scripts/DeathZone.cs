@@ -6,7 +6,7 @@ public class DeathZone : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out IKillable ik))
         {
-            ik.OnKill(gameObject);
+            ik.OnDamage(1, gameObject);
         }
     }
 }

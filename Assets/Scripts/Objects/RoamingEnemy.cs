@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class RoamingEnemy : MonoBehaviour, IKillable
 {
@@ -11,6 +12,8 @@ public class RoamingEnemy : MonoBehaviour, IKillable
     private float leeway = 0.1f;
 
     private Rigidbody2D rb;
+
+    public Action<RoamingEnemy> KilledAction;
 
     private void Start()
     {
@@ -67,6 +70,17 @@ public class RoamingEnemy : MonoBehaviour, IKillable
 
     public void OnKill(GameObject damageSource = null)
     {
+        if(KilledAction != null)
+        {
+            KilledAction?.Invoke(this);
+        }
+        
         Destroy(gameObject);
+    }
+
+    public void SetTargetPoints(GameObject[] points)
+    {
+        targetPosIndex = 0;
+        _moveToPoints = points;
     }
 }

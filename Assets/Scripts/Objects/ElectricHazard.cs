@@ -12,6 +12,8 @@ public class ElectricHazard : MonoBehaviour
     public void ToggleActive()
     {
         isToggledOn = !isToggledOn;
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        gameObject.GetComponent<Collider2D>().enabled = true;
         UpdateState();
     }
 
