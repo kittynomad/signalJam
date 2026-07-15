@@ -6,7 +6,7 @@ public class DeathZone : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerBehaviors pb))
         {
-            pb.Respawn();
+            pb.OnKill(gameObject);
         }
     }
 }
