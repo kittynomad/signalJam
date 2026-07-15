@@ -19,7 +19,7 @@ public class ElectricHazard : MonoBehaviour
     {
         if(isToggledOn && collision.gameObject.TryGetComponent(out IKillable ik))
         {
-            ik.OnDamage(1, gameObject)
+            ik.OnDamage(1, gameObject);
         }
     }
 }
