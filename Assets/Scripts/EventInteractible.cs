@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class EventInteractible : InteractibleEntity
 {
     [SerializeField] private UnityEvent _triggeredActions;
     [SerializeField] private bool _reusable = true;
+    [SerializeField] private float _cooldownTime = 0.75f;
 
     private LineRenderer lr;
     private bool connected = false;
     private GameObject player;
+    private bool OnCooldown = false;
     void Start()
     {
         lr = gameObject.GetComponent<LineRenderer>();
@@ -50,7 +53,26 @@ public class EventInteractible : InteractibleEntity
     public override void OnInteract(PlayerBehaviors pb)
     {
         base.OnInteract(pb);
-        _triggeredActions.Invoke();
+        if(!OnCooldown)
+        {
+            StopAllCoroutines();
+            _triggeredActions.Invoke();
+            StartCoroutine(CooldownCoroutine());
+        }
+        
+    }
+
+    public void StartCooldown()
+    {
+        StopAllCoroutines();
+        StartCoroutine(CooldownCoroutine());
+    }
+
+    private IEnumerator CooldownCoroutine()
+    {
+        OnCooldown = true;
+        yield return new WaitForSeconds(_cooldownTime);
+        OnCooldown = false;
     }
 
 
