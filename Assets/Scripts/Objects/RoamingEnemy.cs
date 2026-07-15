@@ -21,9 +21,8 @@ public class RoamingEnemy : MonoBehaviour
     private bool MoveTowardsTarget()
     {
         Vector2 moveDirection = (rb.position - (Vector2)_moveToPoints[targetPosIndex].transform.position).normalized;
-        rb.MovePosition(rb.position + moveDirection * _movespeed);
-
-        return Mathf.Abs(rb.position.x - _moveToPoints[targetPosIndex].transform.position.x) <= leeway;
+        rb.MovePosition(rb.position + Vector2.left * moveDirection * _movespeed);
+        return Mathf.Abs(transform.position.x - _moveToPoints[targetPosIndex].transform.position.x) <= leeway;
     }
 
     private IEnumerator MoveCoroutine()
@@ -32,7 +31,16 @@ public class RoamingEnemy : MonoBehaviour
         {
             if (MoveTowardsTarget())
             {
-                targetPosIndex = targetPosIndex >= _moveToPoints.Length - 1 ? 0 : targetPosIndex + 1;
+                if(targetPosIndex == _moveToPoints.Length - 1)
+                {
+                    targetPosIndex = 0;
+                }
+                else
+                {
+                    targetPosIndex++;
+                }
+                //targetPosIndex = targetPosIndex >= _moveToPoints.Length - 1 ? 0 : targetPosIndex + 1;
+                Debug.Log("turning");
                 yield return new WaitForSeconds(_timeForTurn);
             }
             else
