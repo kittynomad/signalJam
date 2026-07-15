@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class RoamingEnemy : MonoBehaviour
+public class RoamingEnemy : MonoBehaviour, IKillable
 {
     [SerializeField] private float _movespeed;
     [SerializeField] private float _timeForTurn;
@@ -51,4 +51,22 @@ public class RoamingEnemy : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.TryGetComponent(out PlayerBehaviors pb))
+        {
+            pb.OnDamage(1, gameObject);
+        }
+    }
+
+    public bool OnDamage(float damageAmount = 1, GameObject damageSource = null)
+    {
+        OnKill(damageSource);
+        return true;
+    }
+
+    public void OnKill(GameObject damageSource = null)
+    {
+        Destroy(gameObject);
+    }
 }
