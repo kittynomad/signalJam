@@ -291,8 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGoal
   _transitionSpeed: 0.05
-  _leeway: 0.3
   _nextLevelStartLocation: {fileID: 8701958590836587652}
+  _endTransitionVelocity: {x: 15, y: 0}
 --- !u!1 &8701958590836587652
 GameObject:
   m_ObjectHideFlags: 0
