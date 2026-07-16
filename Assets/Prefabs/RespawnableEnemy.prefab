@@ -111,6 +111,9 @@ MonoBehaviour:
   _moveToPoints:
   - {fileID: 0}
   - {fileID: 0}
+  _solidLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!50 &7245830922929545365
 Rigidbody2D:
   serializedVersion: 5
