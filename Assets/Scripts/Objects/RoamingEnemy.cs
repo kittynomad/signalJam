@@ -7,6 +7,8 @@ public class RoamingEnemy : MonoBehaviour, IKillable
     [SerializeField] private float _movespeed;
     [SerializeField] private float _timeForTurn;
     [SerializeField] private GameObject[] _moveToPoints;
+    [SerializeField] private LayerMask _solidLayer;
+    private Collider2D coll;
 
     private int targetPosIndex = 0;
     private float leeway = 0.1f;
@@ -18,13 +20,15 @@ public class RoamingEnemy : MonoBehaviour, IKillable
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        coll = gameObject.GetComponent<Collider2D>();
         StartCoroutine(MoveCoroutine());
     }
 
     private bool MoveTowardsTarget()
     {
         Vector2 moveDirection = (rb.position - (Vector2)_moveToPoints[targetPosIndex].transform.position).normalized;
-        rb.MovePosition(rb.position + Vector2.left * moveDirection * _movespeed);
+        rb.MovePosition(rb.position + (moveDirection.x > 0 ? Vector2.left : Vector2.right) * _movespeed + (Physics2D.gravity * rb.gravityScale * Time.fixedDeltaTime));
+        //rb.MovePosition(rb.position + Vector2.left * moveDirection * _movespeed);
         return Mathf.Abs(transform.position.x - _moveToPoints[targetPosIndex].transform.position.x) <= leeway;
     }
 
@@ -82,5 +86,12 @@ public class RoamingEnemy : MonoBehaviour, IKillable
     {
         targetPosIndex = 0;
         _moveToPoints = points;
+    }
+
+    public bool IsGrounded()
+    {
+        //check if grounded (duh)
+        bool hg = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, _solidLayer);
+        return hg;
     }
 }

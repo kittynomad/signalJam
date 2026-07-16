@@ -176,6 +176,9 @@ MonoBehaviour:
   _moveToPoints:
   - {fileID: 3877766317658250758}
   - {fileID: 6728653069161550165}
+  _solidLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!50 &1070564537502648814
 Rigidbody2D:
   serializedVersion: 5
@@ -192,7 +195,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3ef4d6391927e9b4ab2c436b08b0b897, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
