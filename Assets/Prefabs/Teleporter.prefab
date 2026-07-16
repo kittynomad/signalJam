@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 921487826618313571}
   - component: {fileID: 8761638673228488401}
   - component: {fileID: 5155926297729702023}
-  - component: {fileID: 5596618034792406081}
   - component: {fileID: 1867925715432263896}
+  - component: {fileID: 5428680285556375040}
   m_Layer: 0
   m_Name: Teleporter
   m_TagString: Untagged
@@ -251,19 +251,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.96
---- !u!114 &5596618034792406081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5920773530701157234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7f4e1284d7fc5441b7ec92334cc82fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BasicTeleporter
-  _teleportLocation: {fileID: 8701958590836587652}
 --- !u!114 &1867925715432263896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,9 +266,9 @@ MonoBehaviour:
   _enterActions:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5596618034792406081}
-        m_TargetAssemblyTypeName: BasicTeleporter, Assembly-CSharp
-        m_MethodName: TeleportPlayer
+      - m_Target: {fileID: 5428680285556375040}
+        m_TargetAssemblyTypeName: LevelGoal, Assembly-CSharp
+        m_MethodName: InitiateLevelTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -291,6 +278,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5428680285556375040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920773530701157234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a239dac675d22054f8abf3989992edfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelGoal
+  _transitionSpeed: 0.05
+  _nextLevelStartLocation: {fileID: 8701958590836587652}
 --- !u!1 &8701958590836587652
 GameObject:
   m_ObjectHideFlags: 0
