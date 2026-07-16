@@ -20,11 +20,13 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     private bool jumpHeld = false;
     private Vector2 lastSafePosition;
     private float exposedTime;
+    private bool behindWall;
 
     public Action<PlayerBehaviors> interactAction;
 
     public Vector2 LastSafePosition { get => lastSafePosition; set => lastSafePosition = value; }
     public float ExposedTime { get => exposedTime; set => exposedTime = value; }
+    public bool BehindWall { get => behindWall; set => behindWall = value; }
 
     private void Start()
     {
@@ -121,7 +123,14 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     public bool ExposedFunction()
     {
-        exposedTime += Time.deltaTime;
+        if(!behindWall)
+        {
+            exposedTime += Time.deltaTime;
+        }
+        else
+        {
+            exposedTime = 0f;
+        }
         return exposedTime >= _maxExposedTime;
     }
 
