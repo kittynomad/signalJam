@@ -24,6 +24,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     public Action<PlayerBehaviors> interactAction;
 
     public Vector2 LastSafePosition { get => lastSafePosition; set => lastSafePosition = value; }
+    public float ExposedTime { get => exposedTime; set => exposedTime = value; }
 
     private void Start()
     {
@@ -114,6 +115,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     public void OnKill(GameObject damageSource = null)
     {
+        exposedTime = 0f;
         Respawn();
     }
 
@@ -122,4 +124,5 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         exposedTime += Time.deltaTime;
         return exposedTime >= _maxExposedTime;
     }
+
 }
