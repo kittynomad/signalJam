@@ -64,6 +64,10 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     {
         //check if grounded (duh)
         bool hg = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, _solidLayer);
+        if (coll.isTrigger)
+        {
+            hg = false;
+        }
         return hg;
     }
 
