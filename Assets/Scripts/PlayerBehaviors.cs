@@ -6,6 +6,8 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     [SerializeField] private float _runSpeed;
     [SerializeField] private float _jumpSpeed;
 
+    [SerializeField] private float _maxExposedTime;
+
     [SerializeField] private LayerMask _solidLayer;
 
     [SerializeField] private SpriteRenderer _sR;
@@ -17,10 +19,12 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     private bool jumpHeld = false;
     private Vector2 lastSafePosition;
+    private float exposedTime;
 
     public Action<PlayerBehaviors> interactAction;
 
     public Vector2 LastSafePosition { get => lastSafePosition; set => lastSafePosition = value; }
+    public float ExposedTime { get => exposedTime; set => exposedTime = value; }
 
     private void Start()
     {
@@ -111,6 +115,14 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     public void OnKill(GameObject damageSource = null)
     {
+        exposedTime = 0f;
         Respawn();
     }
+
+    public bool ExposedFunction()
+    {
+        exposedTime += Time.deltaTime;
+        return exposedTime >= _maxExposedTime;
+    }
+
 }
