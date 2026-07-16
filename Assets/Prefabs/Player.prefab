@@ -174,9 +174,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviors
   _runSpeed: 10
   _jumpSpeed: 15
+  _maxExposedTime: 3
   _solidLayer:
     serializedVersion: 2
     m_Bits: 64
+  _sR: {fileID: 0}
+  _anim: {fileID: 0}
 --- !u!114 &5141467561210022427
 MonoBehaviour:
   m_ObjectHideFlags: 0
