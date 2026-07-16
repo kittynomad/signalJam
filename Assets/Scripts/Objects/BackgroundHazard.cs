@@ -2,16 +2,28 @@ using UnityEngine;
 
 public class BackgroundHazard : MonoBehaviour
 {
-    private void OnTriggerStay2D(Collider2D collision)
+    private bool playerInZone = false;
+    private PlayerBehaviors pb;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("stayyyy");
-        if (collision.gameObject.TryGetComponent(out PlayerBehaviors pb))
+        if (collision.gameObject.TryGetComponent(out PlayerBehaviors a))
         {
-            if(pb.ExposedFunction())
-            {
-                //play animation or whatever
-                pb.OnKill();
-            }
+            playerInZone = true;
+            pb = a;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        playerInZone = false;
+    }
+
+    private void FixedUpdate()
+    {
+        if (playerInZone && pb.ExposedFunction())
+        {
+            //play animation or whatever
+            pb.OnKill();
         }
     }
 }
