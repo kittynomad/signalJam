@@ -30,6 +30,10 @@ public class BackgroundWall : MonoBehaviour
         {
             pb.BehindWall = true;
         }
+        else if (collision.gameObject.TryGetComponent(out RoamingEnemy re))
+        {
+            re.BehindWall = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -37,6 +41,10 @@ public class BackgroundWall : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out PlayerBehaviors pb))
         {
             pb.BehindWall = false;
+        }
+        else if (collision.gameObject.TryGetComponent(out RoamingEnemy re))
+        {
+            re.BehindWall = true;
         }
     }
 }
