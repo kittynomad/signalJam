@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class BackgroundWall : MonoBehaviour
 {
     [SerializeField] private bool isActive;
@@ -16,12 +17,16 @@ public class BackgroundWall : MonoBehaviour
     public void ToggleActive()
     {
         isActive = !isActive;
+        UpdateState();
     }
 
     private void UpdateState()
     {
+        Vector2 pos = transform.position;
+        transform.position = Vector2.one * float.MaxValue;
         sr.color = isActive ? Color.white : new Color(1, 1, 1, 0.5f);
         _zone.enabled = isActive;
+        transform.position = pos;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
