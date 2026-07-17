@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff61e5f1798136d4ba0e720c7b9602b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathZone
+  _hurtsPlayer: 0
 --- !u!58 &1666784402543411370
 CircleCollider2D:
   m_ObjectHideFlags: 0

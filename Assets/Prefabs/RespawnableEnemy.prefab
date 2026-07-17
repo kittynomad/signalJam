@@ -114,6 +114,7 @@ MonoBehaviour:
   _solidLayer:
     serializedVersion: 2
     m_Bits: 64
+  _maxExposedTime: 1
 --- !u!50 &7245830922929545365
 Rigidbody2D:
   serializedVersion: 5
