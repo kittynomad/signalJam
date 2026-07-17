@@ -5,7 +5,7 @@ public class ToggleableSolid : MonoBehaviour
     private SpriteRenderer sr;
     private Collider2D coll;
 
-    bool isToggledOn = false;
+    [SerializeField] private bool isToggledOn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
