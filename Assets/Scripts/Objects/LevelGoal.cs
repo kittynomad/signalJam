@@ -13,14 +13,13 @@ public class LevelGoal : MonoBehaviour
     [SerializeField] private GameObject _noSignalZapVFX;
 
     private GameObject player;
-    private GameObject playerAnim;
+    public GameObject playerAnim;
     public void InitiateLevelTransition()
     {
         player = FindAnyObjectByType<PlayerBehaviors>().gameObject;
         playerAnim = GameObject.FindGameObjectWithTag("PlayerSprite");
         player.GetComponent<PlayerInput>().DeactivateInput();
         player.GetComponent<Collider2D>().isTrigger = true;
-        playerAnim.GetComponent<Animator>().SetBool("IsLaunching", true);
         Instantiate(_noSignalZapVFX, player.transform.position, Quaternion.identity);
         player.SetActive(false);
         _anim.Play("LevelEndChargeShoot");
@@ -41,6 +40,7 @@ public class LevelGoal : MonoBehaviour
     {
         yield return new WaitForSeconds(_animationDelay);
         player.SetActive(true);
+        playerAnim.GetComponent<Animator>().SetBool("IsLaunching", true);
         player.transform.position = new Vector2(transform.position.x, transform.position.y + 1.15f);
         while (Vector2.Distance(player.GetComponent<Rigidbody2D>().position, _nextLevelStartLocation.transform.position) >= _leeway)
         {
