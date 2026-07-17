@@ -131,7 +131,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.03, y: 0.92}
+  m_Size: {x: 0.72, y: 0.92}
   m_Direction: 0
 --- !u!50 &5559508394250450325
 Rigidbody2D:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviors
   _runSpeed: 10
   _jumpSpeed: 15
-  _maxExposedTime: 3
+  _maxExposedTime: 2
   _solidLayer:
     serializedVersion: 2
     m_Bits: 64

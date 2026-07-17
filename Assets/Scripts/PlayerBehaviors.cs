@@ -92,9 +92,9 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         }
     }
 
-    public void UpdateSafePosition()
+    public void UpdateSafePosition(Vector2 v2)
     {
-        lastSafePosition = transform.position;
+        lastSafePosition = v2;
     }
 
     public void Respawn()
