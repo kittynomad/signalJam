@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82c90fc8531c0d48bbf6751f1cdb59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleableSolid
+  isToggledOn: 0
 --- !u!61 &323611365
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -943,6 +944,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1121232029
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1878068152479824048, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_Name
+      value: Shockboxes
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022592901762857974, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8dfba0d29996bc40973ae7f396477ab, type: 3}
 --- !u!1 &1183334248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff61e5f1798136d4ba0e720c7b9602b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathZone
+  _hurtsPlayer: 1
 --- !u!1 &1926549051
 GameObject:
   m_ObjectHideFlags: 0
@@ -7404,3 +7463,4 @@ SceneRoots:
   - {fileID: 323611367}
   - {fileID: 1297859961}
   - {fileID: 6314832826548867601}
+  - {fileID: 1121232029}
