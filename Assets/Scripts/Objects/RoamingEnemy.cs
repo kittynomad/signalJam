@@ -8,14 +8,20 @@ public class RoamingEnemy : MonoBehaviour, IKillable
     [SerializeField] private float _timeForTurn;
     [SerializeField] private GameObject[] _moveToPoints;
     [SerializeField] private LayerMask _solidLayer;
+    [SerializeField] private float _maxExposedTime;
     private Collider2D coll;
 
     private int targetPosIndex = 0;
     private float leeway = 0.1f;
+    private float exposedTime;
+    private bool behindWall;
 
     private Rigidbody2D rb;
 
     public Action<RoamingEnemy> KilledAction;
+
+    public float ExposedTime { get => exposedTime; set => exposedTime = value; }
+    public bool BehindWall { get => behindWall; set => behindWall = value; }
 
     private void Start()
     {
@@ -93,5 +99,18 @@ public class RoamingEnemy : MonoBehaviour, IKillable
         //check if grounded (duh)
         bool hg = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, _solidLayer);
         return hg;
+    }
+
+    public bool ExposedFunction()
+    {
+        if (!behindWall)
+        {
+            exposedTime += Time.deltaTime;
+        }
+        else
+        {
+            exposedTime = 0f;
+        }
+        return exposedTime >= _maxExposedTime;
     }
 }
