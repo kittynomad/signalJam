@@ -12,6 +12,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     [SerializeField] private SpriteRenderer _sR;
     [SerializeField] private Animator _anim;
+    [SerializeField] private GameObject _noSignalZapVFX;
 
     private PlayerController pc;
     private Rigidbody2D rb;
@@ -99,6 +100,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     public void Respawn()
     {
+        Instantiate(_noSignalZapVFX, transform.position, Quaternion.identity);
         transform.position = lastSafePosition;
     }
 
