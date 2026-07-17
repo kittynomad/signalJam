@@ -6,7 +6,7 @@ public class CheckpointController : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent(out PlayerBehaviors pb))
         {
-            pb.UpdateSafePosition();
+            pb.UpdateSafePosition(gameObject.transform.position);
         }
     }
 }
