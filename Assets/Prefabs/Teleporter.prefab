@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1324241435419726016}
   - component: {fileID: 691855490572557668}
   - component: {fileID: 465626591795926256}
+  - component: {fileID: 2685030218990031979}
   m_Layer: 0
   m_Name: TeleporterSprite
   m_TagString: Untagged
@@ -128,6 +129,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SetActiveAnimEvents
   _gO: {fileID: 6738292707076207962}
+--- !u!114 &2685030218990031979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415666485906130499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab33e1d5cead2e94fa9fb308fafd20ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventSound
+  s: DigitalWarble
+  s2: CannonLaunch
 --- !u!1 &4761752696640709577
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +473,7 @@ MonoBehaviour:
   _animationDelay: 1
   _anim: {fileID: 691855490572557668}
   _noSignalZapVFX: {fileID: 1737326952689757582, guid: 0b0f380229c851c48aa907813a5a7c47, type: 3}
+  playerAnim: {fileID: 0}
 --- !u!1 &6738292707076207962
 GameObject:
   m_ObjectHideFlags: 0

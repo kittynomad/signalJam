@@ -13,5 +13,17 @@ public class MusicTrigger : MonoBehaviour
             _aM.NormalMusicStart();
             Destroy(gameObject);
         }
+
+        if (_musicBehavior == 2)
+        {
+            _aM.ScaryMusicStart();
+            Destroy(gameObject);
+        }
+
+        if (_musicBehavior == 3)
+        {
+            _aM.FinalMusicStart();
+            Destroy(gameObject);
+        }
     }
 }
