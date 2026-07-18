@@ -11,6 +11,9 @@ public class ElectricHazard : MonoBehaviour
     [SerializeField] private BoxCollider2D _bC2D;
     [SerializeField] private float _sparkleFreq;
 
+    [SerializeField] private GameObject _visualON;
+    [SerializeField] private GameObject _visualOFF;
+
     private void Start()
     {
         UpdateState();
@@ -53,11 +56,15 @@ public class ElectricHazard : MonoBehaviour
         //im putting placeholder SLOPPP here for now
         if(isToggledOn)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            _visualON.SetActive(true);
+            _visualOFF.SetActive(false);
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            _visualON.SetActive(false);
+            _visualOFF.SetActive(true);
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 
