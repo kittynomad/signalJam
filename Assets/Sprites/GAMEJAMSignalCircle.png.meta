@@ -1,0 +1,406 @@
+fileFormatVersion: 2
+guid: 0ecd0362745023449a687fb91f2ae2d2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3907346850669771725
+    second: GAMEJAMSignalCircle_0
+  - first:
+      213: 277594712844967796
+    second: GAMEJAMSignalCircle_1
+  - first:
+      213: -3284268538451227925
+    second: GAMEJAMSignalCircle_2
+  - first:
+      213: -5734707441651414030
+    second: GAMEJAMSignalCircle_3
+  - first:
+      213: -7922844262391009457
+    second: GAMEJAMSignalCircle_4
+  - first:
+      213: 9199699651241680619
+    second: GAMEJAMSignalCircle_5
+  - first:
+      213: -802205973932932832
+    second: GAMEJAMSignalCircle_6
+  - first:
+      213: -7645530586986067689
+    second: GAMEJAMSignalCircle_7
+  - first:
+      213: -1167800465110889858
+    second: GAMEJAMSignalCircle_8
+  - first:
+      213: 1114214940747453601
+    second: GAMEJAMSignalCircle_9
+  - first:
+      213: -9134311053701825362
+    second: GAMEJAMSignalCircle_10
+  - first:
+      213: 1679051056702584143
+    second: GAMEJAMSignalCircle_11
+  - first:
+      213: -7533440813058186172
+    second: GAMEJAMSignalCircle_12
+  - first:
+      213: 4875954168793477326
+    second: GAMEJAMSignalCircle_13
+  - first:
+      213: -4236406846744069346
+    second: GAMEJAMSignalCircle_14
+  - first:
+      213: -50968874177389008
+    second: GAMEJAMSignalCircle_15
+  - first:
+      213: 7755038779545827448
+    second: GAMEJAMSignalCircle_16
+  - first:
+      213: -4696454566367790087
+    second: GAMEJAMSignalCircle_17
+  - first:
+      213: -6796834122992769679
+    second: GAMEJAMSignalCircle_18
+  - first:
+      213: -2002476456370488288
+    second: GAMEJAMSignalCircle_19
+  - first:
+      213: -4932862832515270456
+    second: GAMEJAMSignalCircle_20
+  - first:
+      213: -8139651506284169389
+    second: GAMEJAMSignalCircle_21
+  - first:
+      213: 2825141460484940616
+    second: GAMEJAMSignalCircle_22
+  - first:
+      213: 4388205094472659812
+    second: GAMEJAMSignalCircle_23
+  - first:
+      213: -3326490818031198132
+    second: GAMEJAMSignalCircle_24
+  - first:
+      213: -6829960609262044799
+    second: GAMEJAMSignalCircle_25
+  - first:
+      213: -3517189409816349275
+    second: GAMEJAMSignalCircle_26
+  - first:
+      213: -1766238320195767396
+    second: GAMEJAMSignalCircle_27
+  - first:
+      213: 4270895917581805058
+    second: GAMEJAMSignalCircle_28
+  - first:
+      213: -2978715491365776214
+    second: GAMEJAMSignalCircle_29
+  - first:
+      213: -3879012121408175074
+    second: GAMEJAMSignalCircle_30
+  - first:
+      213: 5591136515169817878
+    second: GAMEJAMSignalCircle_31
+  - first:
+      213: 6972233198242733000
+    second: GAMEJAMSignalCircle_32
+  - first:
+      213: 618839889131553594
+    second: GAMEJAMSignalCircle_33
+  - first:
+      213: -2980556980715018875
+    second: GAMEJAMSignalCircle_34
+  - first:
+      213: -1281388914559989772
+    second: GAMEJAMSignalCircle_35
+  - first:
+      213: 2463741953908675072
+    second: GAMEJAMSignalCircle_36
+  - first:
+      213: -8709085231788772370
+    second: GAMEJAMSignalCircle_37
+  - first:
+      213: -7705265933814707296
+    second: GAMEJAMSignalCircle_38
+  - first:
+      213: 1371234514292772337
+    second: GAMEJAMSignalCircle_39
+  - first:
+      213: 2805165346991460185
+    second: GAMEJAMSignalCircle_40
+  - first:
+      213: 3985482671406987712
+    second: GAMEJAMSignalCircle_41
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GAMEJAMSignalCircle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcbb968324fa93630800000000000000
+      internalID: 3907346850669771725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAMEJAMSignalCircle_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f96aaabe63ad300800000000000000
+      internalID: 277594712844967796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAMEJAMSignalCircle_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea8f924a2feb62d0800000000000000
+      internalID: -3284268538451227925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAMEJAMSignalCircle_3
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb049137f93a60b0800000000000000
+      internalID: -5734707441651414030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAMEJAMSignalCircle_4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4f2171de176c0290800000000000000
+      internalID: -7922844262391009457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAMEJAMSignalCircle_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee9b883716ebaf70800000000000000
+      internalID: 9199699651241680619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAMEJAMSignalCircle_6
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 021080fbaedfdd4f0800000000000000
+      internalID: -802205973932932832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9f1a09331d0440f47939df74b1686c7b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":120.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      GAMEJAMSignalCircle_0: 3907346850669771725
+      GAMEJAMSignalCircle_1: 277594712844967796
+      GAMEJAMSignalCircle_2: -3284268538451227925
+      GAMEJAMSignalCircle_3: -5734707441651414030
+      GAMEJAMSignalCircle_4: -7922844262391009457
+      GAMEJAMSignalCircle_5: 9199699651241680619
+      GAMEJAMSignalCircle_6: -802205973932932832
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

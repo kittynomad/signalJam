@@ -100,8 +100,9 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     public void Respawn()
     {
-        Instantiate(_noSignalZapVFX, transform.position, Quaternion.identity);
+        rb.linearVelocity = new Vector2(0, 0);
         transform.position = lastSafePosition;
+        Instantiate(_noSignalZapVFX, transform.position, Quaternion.identity);
     }
 
     public void InteractBehavior()
