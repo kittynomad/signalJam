@@ -8,6 +8,8 @@ public class EventInteractible : InteractibleEntity
     [SerializeField] private bool _reusable = true;
     [SerializeField] private float _cooldownTime = 0.75f;
 
+    [SerializeField] private Animator _anim;
+
     private LineRenderer lr;
     private bool connected = false;
     private GameObject player;
@@ -33,6 +35,7 @@ public class EventInteractible : InteractibleEntity
 
         if (worked)
         {
+            _anim.Play("ButtonTurnOn");
             player = collision.gameObject;
             connected = worked;
             lr.enabled = connected;
@@ -44,7 +47,11 @@ public class EventInteractible : InteractibleEntity
     public override bool TryUnsubscribeInteraction(Collider2D collision)
     {
         bool worked = base.TryUnsubscribeInteraction(collision);
-        if (worked) connected = false;
+        if (worked)
+        {
+            _anim.Play("ButtonTurnOff");
+            connected = false;
+        }
         lr.enabled = connected;
 
         return worked;
