@@ -32,8 +32,10 @@ public class RoamingEnemy : MonoBehaviour, IKillable
 
     private bool MoveTowardsTarget()
     {
+        
         Vector2 moveDirection = (rb.position - (Vector2)_moveToPoints[targetPosIndex].transform.position).normalized;
-        rb.MovePosition(rb.position + (moveDirection.x > 0 ? Vector2.left : Vector2.right) * _movespeed + (Physics2D.gravity * rb.gravityScale * Time.fixedDeltaTime));
+        if (IsGrounded())
+            rb.MovePosition(rb.position + (moveDirection.x > 0 ? Vector2.left : Vector2.right) * _movespeed + (Physics2D.gravity * rb.gravityScale * Time.fixedDeltaTime));
         //rb.MovePosition(rb.position + Vector2.left * moveDirection * _movespeed);
         return Mathf.Abs(transform.position.x - _moveToPoints[targetPosIndex].transform.position.x) <= leeway;
     }
