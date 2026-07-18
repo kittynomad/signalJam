@@ -7,6 +7,9 @@ public class BackgroundWall : MonoBehaviour
     private Collider2D _zone;
     private SpriteRenderer sr;
 
+    [SerializeField] private Transform _startPoint;
+    [SerializeField] private Transform _otherPoint;
+
     private void Start()
     {
         _zone = gameObject.GetComponent<Collider2D>();
