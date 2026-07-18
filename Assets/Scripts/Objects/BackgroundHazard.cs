@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BackgroundHazard : MonoBehaviour
 {
+    [SerializeField] private GameObject _spawnedThingaling;
     private bool playerInZone = false;
     private PlayerBehaviors pb;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +30,7 @@ public class BackgroundHazard : MonoBehaviour
         {
             if(re.ExposedFunction())
             {
+                Instantiate(_spawnedThingaling, re.transform.position, Quaternion.identity);
                 //animation here
                 re.OnKill();
             }
