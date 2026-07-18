@@ -16,7 +16,7 @@ public class ElectricHazard : MonoBehaviour
 
     private void Start()
     {
-        UpdateState();
+        //UpdateState();
     }
 
     private void FixedUpdate()
