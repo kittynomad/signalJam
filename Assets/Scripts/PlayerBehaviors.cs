@@ -1,5 +1,6 @@
-using UnityEngine;
 using System;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBehaviors : MonoBehaviour, IKillable
 {
@@ -13,6 +14,12 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     [SerializeField] private SpriteRenderer _sR;
     [SerializeField] private Animator _anim;
     [SerializeField] private GameObject _noSignalZapVFX;
+    [SerializeField] private GameObject _signalPingVFX;
+    [SerializeField] private float _signalYOffset;
+
+    [SerializeField] private GameObject _corpseLeft;
+    [SerializeField] private GameObject _corpseRight;
+
 
     private PlayerController pc;
     private Rigidbody2D rb;
@@ -100,12 +107,16 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     public void Respawn()
     {
-        Instantiate(_noSignalZapVFX, transform.position, Quaternion.identity);
+        pc.MovementDirection = Vector2.zero;
+        gameObject.GetComponent<PlayerInput>().ActivateInput();
+        rb.linearVelocity = new Vector2(0, 0);
         transform.position = lastSafePosition;
+        Instantiate(_noSignalZapVFX, transform.position, Quaternion.identity);
     }
 
     public void InteractBehavior()
     {
+        Instantiate(_signalPingVFX, new Vector2(transform.position.x, transform.position.y + _signalYOffset), Quaternion.identity);
         //broadcast interactAction if it has subscribers
         if (interactAction != null)
         {
@@ -124,7 +135,17 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     public void OnKill(GameObject damageSource = null)
     {
         exposedTime = 0f;
-        Respawn();
+        gameObject.GetComponent<PlayerInput>().DeactivateInput();
+        if (_sR.flipX)
+        {
+            Instantiate(_corpseRight, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(_corpseLeft, transform.position, Quaternion.identity);
+        }
+        gameObject.transform.position = new Vector2(9999, 0);
+        //Respawn();
     }
 
     public bool ExposedFunction()

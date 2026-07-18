@@ -1,5 +1,8 @@
-using UnityEngine;
+using NUnit.Framework;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +12,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private List<ClipAndEnum> _sounds;
     [SerializeField] private AudioClip[] _musicClips;
+
+    [SerializeField] private float _normalMusicVol;
 
     public static AudioManager Instance { get => instance; set => instance = value; }
     public List<ClipAndEnum> Sounds { get => _sounds; set => _sounds = value; }
@@ -63,11 +68,31 @@ public class AudioManager : MonoBehaviour
         {
             if (c.ClipName == soundID)
             {
-                return c.ChooseAtRandom ? c.Clips[Random.Range(0, c.Clips.Length)] : c.Clips[0];
+                return c.ChooseAtRandom ? c.Clips[UnityEngine.Random.Range(0, c.Clips.Length)] : c.Clips[0];
             }
         }
         Debug.LogError("No sound of ID " + soundID + " found in AudioManager!");
         return null;
+    }
+    public void WindCutOff()
+    {
+        StartCoroutine(GradualMute(0.005f));
+    }
+
+    public IEnumerator GradualMute(float f)
+    {
+        while (_musicSource.volume > 0)
+        {
+            yield return new WaitForSeconds(0.01f);
+            _musicSource.volume -= f;
+        }
+        _musicSource.clip = null;
+    }
+
+    public void NormalMusicStart()
+    {
+        _musicSource.volume = _normalMusicVol;
+        SwitchMusic(1);
     }
 }
 
