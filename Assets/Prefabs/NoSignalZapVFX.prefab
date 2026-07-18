@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6404356264467560984}
   - component: {fileID: 4547541168946353949}
   - component: {fileID: 6727970639529105110}
+  - component: {fileID: 2996336581846171197}
   m_Layer: 0
   m_Name: NoSignalZapVFX
   m_TagString: Untagged
@@ -127,3 +128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e65925d91b8d22418353360feb89d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VFXSuicide
+--- !u!114 &2996336581846171197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737326952689757582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab33e1d5cead2e94fa9fb308fafd20ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventSound
+  s: StaticCrackle

@@ -14,6 +14,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] _musicClips;
 
     [SerializeField] private float _normalMusicVol;
+    [SerializeField] private float _scaryMusicVol;
+    [SerializeField] private float _finalMusicVol;
 
     public static AudioManager Instance { get => instance; set => instance = value; }
     public List<ClipAndEnum> Sounds { get => _sounds; set => _sounds = value; }
@@ -49,6 +51,7 @@ public class AudioManager : MonoBehaviour
 
     public static void PlaySound(string soundID, float volume = 1f)
     {
+        instance.audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
         instance.audioSource.PlayOneShot(instance.GetAudioClip(soundID));
     }
 
@@ -93,6 +96,18 @@ public class AudioManager : MonoBehaviour
     {
         _musicSource.volume = _normalMusicVol;
         SwitchMusic(1);
+    }
+
+    public void ScaryMusicStart()
+    {
+        _musicSource.volume = _scaryMusicVol;
+        SwitchMusic(2);
+    }
+
+    public void FinalMusicStart()
+    {
+        _musicSource.volume = _finalMusicVol;
+        SwitchMusic(3);
     }
 }
 

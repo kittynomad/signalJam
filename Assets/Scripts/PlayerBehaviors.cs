@@ -56,6 +56,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         if(IsGrounded())
         {
             _anim.Play("PlayerJumpStart");
+            AudioManager.PlaySound("Jump");
             jumpHeld = true;
             rb.linearVelocityY = _jumpSpeed;
         }
@@ -117,6 +118,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     public void InteractBehavior()
     {
         Instantiate(_signalPingVFX, new Vector2(transform.position.x, transform.position.y + _signalYOffset), Quaternion.identity);
+        AudioManager.PlaySound("SignalPing");
         //broadcast interactAction if it has subscribers
         if (interactAction != null)
         {
@@ -135,6 +137,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     public void OnKill(GameObject damageSource = null)
     {
         exposedTime = 0f;
+        AudioManager.PlaySound("Death");
         gameObject.GetComponent<PlayerInput>().DeactivateInput();
         if (_sR.flipX)
         {

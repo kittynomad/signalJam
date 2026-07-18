@@ -24,7 +24,7 @@ public class BackgroundWall : MonoBehaviour
     {
         Vector2 pos = transform.position;
         transform.position = Vector2.one * float.MaxValue;
-        sr.color = isActive ? Color.white : new Color(1, 1, 1, 0.5f);
+        //sr.color = isActive ? Color.white : new Color(1, 1, 1, 0.5f);
         _zone.enabled = isActive;
         transform.position = pos;
     }
