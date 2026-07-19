@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 119744500864067725}
   - component: {fileID: 8425192742399720561}
   - component: {fileID: 8679093430453933731}
+  - component: {fileID: 3436784019784005029}
   m_Layer: 0
   m_Name: ButtonSprite
   m_TagString: Untagged
@@ -243,6 +244,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimateHalo
   _halo: {fileID: 940220017938311397}
+--- !u!114 &3436784019784005029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842447077998897349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab33e1d5cead2e94fa9fb308fafd20ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventSound
+  s: ButtonOn
+  s2: ButtonOff
 --- !u!1 &8149634149933168143
 GameObject:
   m_ObjectHideFlags: 0

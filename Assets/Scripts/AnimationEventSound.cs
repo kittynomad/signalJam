@@ -13,4 +13,9 @@ public class AnimationEventSound : MonoBehaviour
     {
         AudioManager.PlaySound(s2);
     }
+
+    public void PlaySoundAProxy()
+    {
+        AudioManager.PlaySound(s, 1f, 1);
+    }
 }

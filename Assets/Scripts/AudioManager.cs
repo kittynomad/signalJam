@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private float _scaryMusicVol;
     [SerializeField] private float _finalMusicVol;
 
+    [SerializeField] private AudioSource[] chudSources;
+
     public static AudioManager Instance { get => instance; set => instance = value; }
     public List<ClipAndEnum> Sounds { get => _sounds; set => _sounds = value; }
 
@@ -47,6 +49,16 @@ public class AudioManager : MonoBehaviour
     public static void PlaySound(string soundID)
     {
         PlaySound(soundID, 1f);
+    }
+
+    public static void PlaySound(string soundIDNewAndAwesome, float volume = 1f, int i = 0)
+    {
+        if (i != 2)
+        {
+
+            instance.chudSources[i].pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+        }
+        instance.chudSources[i].PlayOneShot(instance.GetAudioClip(soundIDNewAndAwesome));
     }
 
     public static void PlaySound(string soundID, float volume = 1f)
@@ -80,6 +92,11 @@ public class AudioManager : MonoBehaviour
     public void WindCutOff()
     {
         StartCoroutine(GradualMute(0.005f));
+    }
+
+    public void FastCutOff()
+    {
+        StartCoroutine(GradualMute(0.02f));
     }
 
     public IEnumerator GradualMute(float f)

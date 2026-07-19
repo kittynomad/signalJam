@@ -115,7 +115,10 @@ MonoBehaviour:
   _solidLayer:
     serializedVersion: 2
     m_Bits: 64
-  _maxExposedTime: 3
+  _maxExposedTime: 5
+  _anim:
+  - {fileID: 5451908289674348217}
+  behindWall: 1
   _corpse: {fileID: 6376727477477496819, guid: 5564ec5277a6d8745b96d3a548b3c47e, type: 3}
 --- !u!50 &5962247484989333283
 Rigidbody2D:
@@ -201,6 +204,7 @@ GameObject:
   - component: {fileID: 1751504597744437794}
   - component: {fileID: 5403026972358615763}
   - component: {fileID: 5451908289674348217}
+  - component: {fileID: 6118088594034204502}
   m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
@@ -304,3 +308,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6118088594034204502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582961987215146996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab33e1d5cead2e94fa9fb308fafd20ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventSound
+  s: EnemyClick
+  s2: 

@@ -26,8 +26,8 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     [SerializeField] private SpriteRenderer[] _backgroundProps;
     [SerializeField] private SpriteRenderer _scaryBackground;
-    private bool EnteringHorror;
-    private bool ExitingHorror;
+    public bool EnteringHorror;
+    public bool ExitingHorror;
     public bool HorrorRiser;
     private float HorrorVol;
 
@@ -35,7 +35,6 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     private Rigidbody2D rb;
     private Collider2D coll;
 
-    private bool jumpHeld = false;
     private bool crouchHeld = false;
     private Vector2 lastSafePosition;
     private float exposedTime;
@@ -68,9 +67,9 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         }
         
         UpdateAnimator();
-        if (HorrorRiser && HorrorVol < 0.7f)
+        if (HorrorRiser && HorrorVol < 0.7f && !coll.isTrigger)
         {
-            HorrorVol += 0.01f;
+            HorrorVol += 0.03f;
             _aM.ChangeHorrorVolume(HorrorVol);
         }
         else if (!HorrorRiser && HorrorVol > 0)
@@ -93,6 +92,8 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
             if (_backgroundProps[0].color.a <= 0)
             {
                 EnteringHorror = false;
+                col2.a = 1;
+                _scaryBackground.color = col2;
             }
         }
         if (ExitingHorror)
@@ -100,15 +101,16 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
             for (int i = 0; i < _backgroundProps.Length - 1; i++)
             {
                 Color col = _backgroundProps[i].color;
-                col.a = _backgroundProps[i].color.a + 0.05f;
+                col.a = _backgroundProps[i].color.a + 0.01f;
                 _backgroundProps[i].color = col;
             }
             Color col2 = _scaryBackground.color;
-            col2.a = _scaryBackground.color.a - 0.01f;
+            col2.a = _scaryBackground.color.a - 0.005f;
             _scaryBackground.color = col2;
-            if (_backgroundProps[0].color.a == 1)
+            if (_backgroundProps[0].color.a >= 1)
             {
                 ExitingHorror = false;
+                //Destroy(_scaryBackground);
             }
         }
     }
