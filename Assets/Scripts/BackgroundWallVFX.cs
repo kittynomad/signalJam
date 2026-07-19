@@ -48,7 +48,7 @@ public class BackgroundWallVFX : MonoBehaviour
                 Color col = _sR.color;
                 col.a = _sR.color.a - 0.05f;
                 _sR.color = col;
-                if (col.a <= 0.2)
+                if (col.a <= 0.1)
                 {
                     isColorShifting = false;
                 }

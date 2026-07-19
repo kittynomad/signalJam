@@ -52,7 +52,7 @@ public class AudioManager : MonoBehaviour
     public static void PlaySound(string soundID, float volume = 1f)
     {
         instance.audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
-        instance.audioSource.PlayOneShot(instance.GetAudioClip(soundID));
+        AudioSource a = instance.audioSource.PlayOneShot(instance.GetAudioClip(soundID));
     }
 
     public static void PlaySoundAtPosition(string soundID, Vector2 position)

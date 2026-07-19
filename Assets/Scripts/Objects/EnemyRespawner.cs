@@ -7,6 +7,8 @@ public class EnemyRespawner : MonoBehaviour, IKillable
     [SerializeField] private GameObject[] _movePoints;
     [SerializeField] private GameObject _respawnPoint;
 
+    [SerializeField] private GameObject _vfx;
+
     [SerializeField] private int _hitsToDestroy = 3;
 
     private GameObject enemy;
@@ -31,6 +33,7 @@ public class EnemyRespawner : MonoBehaviour, IKillable
         {
             lastEnemy.KilledAction -= RespawnEnemy;
         }
+        Instantiate(_vfx, _respawnPoint.transform.position, Quaternion.identity);
         enemy = Instantiate(_enemyPrefab, _respawnPoint.transform.position, Quaternion.identity);
         enemy.GetComponent<RoamingEnemy>().SetTargetPoints(_movePoints);
         enemy.GetComponent<RoamingEnemy>().KilledAction += RespawnEnemy;

@@ -148,6 +148,7 @@ MonoBehaviour:
   - {fileID: 5336185003345302079}
   - {fileID: 2848353729031038021}
   _respawnPoint: {fileID: 8057108824796136996}
+  _vfx: {fileID: 6668241275659405455, guid: 8e1942fcca99ad644919fdc5709b081a, type: 3}
   _hitsToDestroy: 3
 --- !u!212 &3140233911673494186
 SpriteRenderer:
