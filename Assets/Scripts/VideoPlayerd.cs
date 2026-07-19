@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class VideoPlayerd : MonoBehaviour
 {
     public string NextScene = "MainMenu";
-    public VideoClip toPlay;
+    //public VideoClip toPlay;
+    [SerializeField] private string _url;
     VideoPlayer videoPlayer;
     bool need = false;
     bool alsoNeed = true;
@@ -21,7 +23,8 @@ public class VideoPlayerd : MonoBehaviour
         videoPlayer = camera.AddComponent<UnityEngine.Video.VideoPlayer>();
         videoPlayer.playOnAwake = true;
         videoPlayer.renderMode = UnityEngine.Video.VideoRenderMode.CameraNearPlane;
-        videoPlayer.clip = toPlay;
+        videoPlayer.url = Path.Combine(Application.streamingAssetsPath, _url);
+        //videoPlayer.clip = toPlay;
         videoPlayer.Play();
     }
     void Update()

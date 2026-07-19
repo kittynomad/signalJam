@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VideoPlayerd
   NextScene: MainScene
-  toPlay: {fileID: 32900000, guid: 6084debb16e00784098b8bc5ebc8ded6, type: 3}
+  _url: Videos/deadzone intro.mp4
 --- !u!114 &197126030
 MonoBehaviour:
   m_ObjectHideFlags: 0
