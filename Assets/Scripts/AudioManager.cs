@@ -104,6 +104,11 @@ public class AudioManager : MonoBehaviour
         SwitchMusic(2);
     }
 
+    public void ChangeHorrorVolume(float f)
+    {
+        _musicSource.volume = f;
+    }
+
     public void FinalMusicStart()
     {
         _musicSource.volume = _finalMusicVol;

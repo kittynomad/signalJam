@@ -5,14 +5,14 @@ public class BackgroundWallVFX : MonoBehaviour
     [SerializeField] private SpriteRenderer _sR;
 
     [SerializeField] private bool _enabled = true;
-    private bool isColorShifting = false;
+    [SerializeField] private bool isColorShifting = false;
 
     private void Start()
     {
         if (!_enabled )
         {
             Color col = _sR.color;
-            col.a = 0.2f;
+            col.a = 0.1f;
             _sR.color = col;
         }
         else
