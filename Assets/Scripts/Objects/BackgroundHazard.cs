@@ -11,6 +11,7 @@ public class BackgroundHazard : MonoBehaviour
         {
             playerInZone = true;
             pb = a;
+            pb.SCARY();
         }
         
     }
@@ -21,6 +22,7 @@ public class BackgroundHazard : MonoBehaviour
         {
             playerInZone = false;
             pb.ExposedTime = 0f;
+            pb.safeee();
         }
     }
 

@@ -5,15 +5,13 @@ public class BackgroundWall : MonoBehaviour
 {
     [SerializeField] private bool isActive;
     private Collider2D _zone;
-    private SpriteRenderer sr;
+    //private SpriteRenderer sr;
 
-    [SerializeField] private Transform _startPoint;
-    [SerializeField] private Transform _otherPoint;
 
     private void Start()
     {
         _zone = gameObject.GetComponent<Collider2D>();
-        sr = gameObject.GetComponent<SpriteRenderer>();
+        //sr = gameObject.GetComponent<SpriteRenderer>();
         UpdateState();
     }
 
@@ -37,6 +35,10 @@ public class BackgroundWall : MonoBehaviour
         if(collision.gameObject.TryGetComponent(out PlayerBehaviors pb))
         {
             pb.BehindWall = true;
+            if (pb.ExposedTime > 0)
+            {
+                pb.safeee();
+            }
         }
         else if (collision.gameObject.TryGetComponent(out RoamingEnemy re))
         {

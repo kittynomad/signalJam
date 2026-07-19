@@ -17,9 +17,19 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     [SerializeField] private GameObject _signalPingVFX;
     [SerializeField] private float _signalYOffset;
 
+    [SerializeField] private AudioManager _aM;
+
     [SerializeField] private GameObject _corpseLeft;
     [SerializeField] private GameObject _corpseRight;
+    [SerializeField] private Animator _faceAnim;
+    private bool faceSleep = true;
 
+    [SerializeField] private SpriteRenderer[] _backgroundProps;
+    [SerializeField] private SpriteRenderer _scaryBackground;
+    private bool EnteringHorror;
+    private bool ExitingHorror;
+    private bool HorrorRiser;
+    private float HorrorVol;
 
     private PlayerController pc;
     private Rigidbody2D rb;
@@ -49,6 +59,49 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         
         rb.linearVelocityX = pc.MovementDirection.x * _runSpeed;
         UpdateAnimator();
+        if (HorrorRiser && HorrorVol < 0.7f)
+        {
+            HorrorVol += 0.01f;
+            _aM.ChangeHorrorVolume(HorrorVol);
+        }
+        else if (!HorrorRiser && HorrorVol > 0)
+        {
+            HorrorVol -= 0.05f;
+            _aM.ChangeHorrorVolume(HorrorVol);
+        }
+
+        if (EnteringHorror)
+        {
+            for (int i = 0; i < _backgroundProps.Length - 1; i++)
+            {
+                Color col = _backgroundProps[i].color;
+                col.a = _backgroundProps[i].color.a - 0.01f;
+                _backgroundProps[i].color = col;
+            }
+            Color col2 = _scaryBackground.color;
+            col2.a = _scaryBackground.color.a + 0.03f;
+            _scaryBackground.color = col2;
+            if (_backgroundProps[0].color.a <= 0)
+            {
+                EnteringHorror = false;
+            }
+        }
+        if (ExitingHorror)
+        {
+            for (int i = 0; i < _backgroundProps.Length - 1; i++)
+            {
+                Color col = _backgroundProps[i].color;
+                col.a = _backgroundProps[i].color.a + 0.05f;
+                _backgroundProps[i].color = col;
+            }
+            Color col2 = _scaryBackground.color;
+            col2.a = _scaryBackground.color.a - 0.01f;
+            _scaryBackground.color = col2;
+            if (_backgroundProps[0].color.a == 1)
+            {
+                ExitingHorror = false;
+            }
+        }
     }
 
     public void JumpBehavior()
@@ -110,6 +163,11 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     {
         pc.MovementDirection = Vector2.zero;
         gameObject.GetComponent<PlayerInput>().ActivateInput();
+        Color col = _sR.color;
+        col.a = 1;
+        _sR.color = col;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        coll.enabled = true;
         rb.linearVelocity = new Vector2(0, 0);
         transform.position = lastSafePosition;
         Instantiate(_noSignalZapVFX, transform.position, Quaternion.identity);
@@ -138,6 +196,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     {
         exposedTime = 0f;
         AudioManager.PlaySound("Death");
+        HorrorRiser = false;
         gameObject.GetComponent<PlayerInput>().DeactivateInput();
         if (_sR.flipX)
         {
@@ -147,21 +206,57 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         {
             Instantiate(_corpseLeft, transform.position, Quaternion.identity);
         }
-        gameObject.transform.position = new Vector2(9999, 0);
+        Color col = _sR.color;
+        col.a = 0;
+        _sR.color = col;
+        rb.bodyType = RigidbodyType2D.Static;
+        coll.enabled = false;
+        //gameObject.transform.position = new Vector2(9999, 0);
         //Respawn();
     }
+
 
     public bool ExposedFunction()
     {
         if(!behindWall)
         {
             exposedTime += Time.deltaTime;
+            if (faceSleep)
+            {
+                SCARY();
+            }
         }
         else
         {
             exposedTime = 0f;
         }
         return exposedTime >= _maxExposedTime;
+    }
+
+    public void SCARY()
+    {
+        _faceAnim.SetBool("Safe", false);
+        faceSleep = false;
+        HorrorRiser = true;
+    }
+    public void safeee()
+    {
+        //if (rb.bodyType == RigidbodyType2D.Dynamic)
+        //{
+        _faceAnim.SetBool("Safe", true);
+        //}
+        faceSleep = true;
+        HorrorRiser = false;
+    }
+
+    public void EnterHorror()
+    {
+        EnteringHorror = true;
+    }
+
+    public void ExitHorror()
+    {
+        ExitingHorror = true;
     }
 
 }
