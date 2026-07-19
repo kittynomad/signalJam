@@ -1,6 +1,7 @@
-using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RoamingEnemy : MonoBehaviour, IKillable
 {
@@ -10,12 +11,15 @@ public class RoamingEnemy : MonoBehaviour, IKillable
     [SerializeField] private LayerMask _solidLayer;
     [SerializeField] private float _maxExposedTime;
     private Collider2D coll;
-    [SerializeField] private BackgroundHazard _bH;
+    //[SerializeField] private BackgroundHazard _bH;
+    [SerializeField] private Animator[] _anim;
+
 
     private int targetPosIndex = 0;
     private float leeway = 0.1f;
     private float exposedTime;
-    private bool behindWall;
+    [SerializeField] private bool behindWall;
+    private bool falling;
 
     private Rigidbody2D rb;
 
@@ -38,7 +42,38 @@ public class RoamingEnemy : MonoBehaviour, IKillable
         
         Vector2 moveDirection = (rb.position - (Vector2)_moveToPoints[targetPosIndex].transform.position).normalized;
         if (IsGrounded())
+        {
+            if (falling)
+            {
+                for (int i = 0; i < _anim.Length; i++)
+                {
+                    _anim[i].Play("EnemyWalk");
+                    falling = false;
+                }
+            }
             rb.MovePosition(rb.position + (moveDirection.x > 0 ? Vector2.left : Vector2.right) * _movespeed + (Physics2D.gravity * rb.gravityScale * Time.fixedDeltaTime));
+            for (int i = 0; i < _anim.Length; i++)
+            {
+                if (moveDirection.x < 0)
+                    _anim[i].SetBool("RightMode", true);
+                else
+                    _anim[i].SetBool("RightMode", false);
+            }
+               
+
+        }
+        else
+        {
+            if (!falling)
+            {
+                for (int i = 0; i < _anim.Length; i++)
+                {
+                    _anim[i].Play("EnemyFalling");
+                    falling = true;
+                    AudioManager.PlaySound("FunnyScream");
+                }
+            }
+        }
         //rb.MovePosition(rb.position + Vector2.left * moveDirection * _movespeed);
         return Mathf.Abs(transform.position.x - _moveToPoints[targetPosIndex].transform.position.x) <= leeway;
     }
@@ -110,16 +145,16 @@ public class RoamingEnemy : MonoBehaviour, IKillable
 
     public void Hi(GameObject g)
     {
-        _bH = g.GetComponent<BackgroundHazard>();
+        //_bH = g.GetComponent<BackgroundHazard>();
     }
 
     public void SafeWall()
     {
-        _bH.KillDog();
+        //_bH.KillDog();
     }
 
     public void FUUUUUCK()
     {
-        _bH.SickEm(gameObject);
+        //_bH.SickEm(gameObject);
     }
 }

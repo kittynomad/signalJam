@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DeathZone : MonoBehaviour
@@ -12,4 +13,5 @@ public class DeathZone : MonoBehaviour
                 ik.OnDamage(1, gameObject);
         }
     }
+
 }

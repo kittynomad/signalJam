@@ -35,7 +35,6 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     private Rigidbody2D rb;
     private Collider2D coll;
 
-    private bool jumpHeld = false;
     private bool crouchHeld = false;
     private Vector2 lastSafePosition;
     private float exposedTime;
@@ -68,9 +67,9 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         }
         
         UpdateAnimator();
-        if (HorrorRiser && HorrorVol < 0.7f)
+        if (HorrorRiser && HorrorVol < 0.7f && !coll.isTrigger)
         {
-            HorrorVol += 0.01f;
+            HorrorVol += 0.03f;
             _aM.ChangeHorrorVolume(HorrorVol);
         }
         else if (!HorrorRiser && HorrorVol > 0)

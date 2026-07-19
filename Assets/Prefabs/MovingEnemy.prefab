@@ -310,7 +310,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _maxExposedTime: 3
-  _bH: {fileID: 0}
+  _anim:
+  - {fileID: 7477202744898781488}
   _corpse: {fileID: 6376727477477496819, guid: 5564ec5277a6d8745b96d3a548b3c47e, type: 3}
 --- !u!50 &1070564537502648814
 Rigidbody2D:
@@ -324,7 +325,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 15
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1

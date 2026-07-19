@@ -18,7 +18,7 @@ public class BackgroundWallVFX : MonoBehaviour
         else
         {
             Color col = _sR.color;
-            col.a = 0.8f;
+            col.a = 0.9f;
             _sR.color = col;
         }
     }
@@ -27,6 +27,14 @@ public class BackgroundWallVFX : MonoBehaviour
     { 
         isColorShifting = true;
         _enabled = !_enabled;
+        if ( _enabled )
+        {
+            AudioManager.PlaySound("WallOn", 1, 2);
+        }
+        else
+        {
+            AudioManager.PlaySound("WallOff", 1, 2);
+        }
     }
 
     private void FixedUpdate()
@@ -38,7 +46,7 @@ public class BackgroundWallVFX : MonoBehaviour
                 Color col = _sR.color;
                 col.a = _sR.color.a + 0.05f;
                 _sR.color = col;
-                if (col.a >= 0.8)
+                if (col.a >= 0.9)
                 {
                     isColorShifting = false;
                 }
