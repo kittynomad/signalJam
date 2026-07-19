@@ -35,7 +35,6 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     private Rigidbody2D rb;
     private Collider2D coll;
 
-    private bool jumpHeld = false;
     private Vector2 lastSafePosition;
     private float exposedTime;
     private bool behindWall;
@@ -110,14 +109,12 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         {
             _anim.Play("PlayerJumpStart");
             AudioManager.PlaySound("Jump");
-            jumpHeld = true;
             rb.linearVelocityY = _jumpSpeed;
         }
     }
 
     public void EndJumpBehavior()
     {
-        jumpHeld = false;
         if (rb.linearVelocityY > 0)
             rb.linearVelocityY = 0;
     }

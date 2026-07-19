@@ -20,6 +20,8 @@ public class RoamingEnemy : MonoBehaviour, IKillable
 
     public Action<RoamingEnemy> KilledAction;
 
+    [SerializeField] private GameObject _corpse;
+
     public float ExposedTime { get => exposedTime; set => exposedTime = value; }
     public bool BehindWall { get => behindWall; set => behindWall = value; }
 
@@ -49,10 +51,12 @@ public class RoamingEnemy : MonoBehaviour, IKillable
                 if(targetPosIndex == _moveToPoints.Length - 1)
                 {
                     targetPosIndex = 0;
+                    gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 }
                 else
                 {
                     targetPosIndex++;
+                    gameObject.GetComponent<SpriteRenderer>().flipX = true;
                 }
                 //targetPosIndex = targetPosIndex >= _moveToPoints.Length - 1 ? 0 : targetPosIndex + 1;
                 Debug.Log("turning");
@@ -86,7 +90,7 @@ public class RoamingEnemy : MonoBehaviour, IKillable
         {
             KilledAction?.Invoke(this);
         }
-        
+        Instantiate(_corpse, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
