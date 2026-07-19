@@ -35,6 +35,8 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     private Rigidbody2D rb;
     private Collider2D coll;
 
+    private bool jumpHeld = false;
+    private bool crouchHeld = false;
     private Vector2 lastSafePosition;
     private float exposedTime;
     private bool behindWall;
@@ -55,8 +57,16 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     private void FixedUpdate()
     {
+        crouchHeld = pc.MovementDirection.y < 0;
+        if (!crouchHeld)
+        {
+            rb.linearVelocityX = pc.MovementDirection.x * _runSpeed;
+        }
+        else
+        {
+            rb.linearVelocityX = 0f;
+        }
         
-        rb.linearVelocityX = pc.MovementDirection.x * _runSpeed;
         UpdateAnimator();
         if (HorrorRiser && HorrorVol < 0.7f)
         {
