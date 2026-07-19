@@ -101,11 +101,11 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
             for (int i = 0; i < _backgroundProps.Length - 1; i++)
             {
                 Color col = _backgroundProps[i].color;
-                col.a = _backgroundProps[i].color.a + 0.06f;
+                col.a = _backgroundProps[i].color.a + 0.01f;
                 _backgroundProps[i].color = col;
             }
             Color col2 = _scaryBackground.color;
-            col2.a = _scaryBackground.color.a - 0.06f;
+            col2.a = _scaryBackground.color.a - 0.005f;
             _scaryBackground.color = col2;
             if (_backgroundProps[0].color.a >= 1)
             {

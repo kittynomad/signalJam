@@ -12,6 +12,8 @@ public class WeakFace : MonoBehaviour
     [SerializeField] private float _deathYSpawn;
 
     [SerializeField] private AudioManager _aM;
+    [SerializeField] private GameObject _cloudLayer;
+    [SerializeField] private GameObject _scaries;
     private bool isAttacking;
 
 
@@ -56,13 +58,16 @@ public class WeakFace : MonoBehaviour
 
     public void MonsterDeath()
     {
+        print("hello!");
         if (isAttacking && transform.position.x > 4)
         {
             print("killed monster!");
             pb.HorrorRiser = false;
             pb.ExitHorror();
             _aM.FastCutOff();
-            Instantiate(_deathAnimation, new Vector2(transform.position.x, _deathYSpawn), Quaternion.identity);
+            Destroy(_cloudLayer);
+            Destroy(_scaries);
+            Instantiate(_deathAnimation, new Vector2(transform.position.x - 1.5f, _deathYSpawn), Quaternion.identity);
             Destroy(gameObject);
         }
     }

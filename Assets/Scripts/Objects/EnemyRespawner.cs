@@ -56,6 +56,7 @@ public class EnemyRespawner : MonoBehaviour, IKillable
 
     public void OnKill(GameObject damageSource = null)
     {
+        Destroy(_respawnPoint);
         Destroy(enemy);
         Destroy(gameObject);
     }
