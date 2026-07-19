@@ -39,6 +39,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     private Vector2 lastSafePosition;
     private float exposedTime;
     private bool behindWall;
+    private bool paralyzed = false;
 
     public Action<PlayerBehaviors> interactAction;
 
@@ -57,7 +58,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     private void FixedUpdate()
     {
         crouchHeld = pc.MovementDirection.y < 0;
-        if (!crouchHeld)
+        if (!crouchHeld && !paralyzed)
         {
             rb.linearVelocityX = pc.MovementDirection.x * _runSpeed;
         }
@@ -117,7 +118,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
 
     public void JumpBehavior()
     {
-        if(IsGrounded())
+        if(!paralyzed && IsGrounded())
         {
             _anim.Play("PlayerJumpStart");
             AudioManager.PlaySound("Jump");
@@ -147,12 +148,12 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         _anim.SetFloat("YSpeed", rb.linearVelocityY);
         _anim.SetBool("IsGrounded", IsGrounded());
 
-        if (pc.MovementDirection.x == -1)
+        if (!paralyzed && pc.MovementDirection.x == -1)
         {
             _sR.flipX = true;
             _anim.SetBool("IsMoving", true);
         }
-        else if (pc.MovementDirection.x == 1)
+        else if (!paralyzed && pc.MovementDirection.x == 1)
         {
             _sR.flipX = false;
             _anim.SetBool("IsMoving", true);
@@ -272,6 +273,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     {
         _runSpeed = 0f;
         _jumpSpeed = 0f;
+        paralyzed = true;
     }
 
 }
