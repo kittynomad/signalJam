@@ -32,6 +32,7 @@ public class ElectricHazard : MonoBehaviour
 
     public void Sparkle()
     {
+        AudioManager.PlaySound("SparkleZap");
         GameObject sparkle = _sparkleVFX[UnityEngine.Random.Range(0, _sparkleVFX.Length - 1)];
         Vector2 pluh = _bC2D.bounds.size;
         float x = UnityEngine.Random.Range(-pluh.x, pluh.x) / 2;

@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class BackgroundHazard : MonoBehaviour
 {
-    [SerializeField] private GameObject _spawnedThingaling;
+    public GameObject _spawnedThingaling;
     private bool playerInZone = false;
     private PlayerBehaviors pb;
+    private GameObject currentHound;
+    private GameObject target;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerBehaviors a))
@@ -13,7 +15,11 @@ public class BackgroundHazard : MonoBehaviour
             pb = a;
             pb.SCARY();
         }
-        
+        if (collision.gameObject.TryGetComponent(out RoamingEnemy re))
+        {
+            re.Hi(gameObject);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -26,16 +32,29 @@ public class BackgroundHazard : MonoBehaviour
         }
     }
 
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out RoamingEnemy re))
         {
-            if(re.ExposedFunction())
-            {
-                Instantiate(_spawnedThingaling, re.transform.position, Quaternion.identity);
-                //animation here
-                re.OnKill();
-            }
+            re.Hi(gameObject);
+        }
+    }
+
+    public void KillDog()
+    {
+        if (currentHound != null)
+        {
+            Destroy(currentHound);
+        }
+    }
+
+    public void SickEm(GameObject g)
+    {
+        currentHound = Instantiate(_spawnedThingaling, transform.position, Quaternion.identity);
+        if (currentHound.GetComponent<WeakFace>() != null)
+        {
+            currentHound.GetComponent<WeakFace>().SetTarget(g);
         }
     }
 

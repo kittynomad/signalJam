@@ -42,7 +42,7 @@ public class BackgroundWall : MonoBehaviour
         }
         else if (collision.gameObject.TryGetComponent(out RoamingEnemy re))
         {
-            re.BehindWall = true;
+            re.SafeWall();
         }
     }
 
@@ -54,7 +54,7 @@ public class BackgroundWall : MonoBehaviour
         }
         else if (collision.gameObject.TryGetComponent(out RoamingEnemy re))
         {
-            re.BehindWall = true;
+            re.FUUUUUCK();
         }
     }
 }

@@ -28,7 +28,7 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
     [SerializeField] private SpriteRenderer _scaryBackground;
     private bool EnteringHorror;
     private bool ExitingHorror;
-    private bool HorrorRiser;
+    public bool HorrorRiser;
     private float HorrorVol;
 
     private PlayerController pc;
