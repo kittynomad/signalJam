@@ -119,14 +119,12 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         {
             _anim.Play("PlayerJumpStart");
             AudioManager.PlaySound("Jump");
-            jumpHeld = true;
             rb.linearVelocityY = _jumpSpeed;
         }
     }
 
     public void EndJumpBehavior()
     {
-        jumpHeld = false;
         if (rb.linearVelocityY > 0)
             rb.linearVelocityY = 0;
     }

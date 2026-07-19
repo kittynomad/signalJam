@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20fb0d31c34f83409ee6277ba3daaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyRespawner
-  _enemyPrefab: {fileID: 7177139339806295163, guid: 61098c254149af74085771110182c20d, type: 3}
+  _enemyPrefab: {fileID: 5327749964242267478, guid: de7c3824185d07742800e6a8c70a5f03, type: 3}
   _movePoints:
   - {fileID: 5336185003345302079}
   - {fileID: 2848353729031038021}

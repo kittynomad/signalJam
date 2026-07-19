@@ -295,6 +295,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _maxExposedTime: 3
+  _corpse: {fileID: 6376727477477496819, guid: 5564ec5277a6d8745b96d3a548b3c47e, type: 3}
 --- !u!50 &1070564537502648814
 Rigidbody2D:
   serializedVersion: 5
