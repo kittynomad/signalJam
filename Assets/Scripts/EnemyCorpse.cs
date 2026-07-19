@@ -9,9 +9,12 @@ public class EnemyCorpse : MonoBehaviour
 
     private float _corpseFallDistance = 15;
 
+    [SerializeField] private GameObject _smallPopVFX;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Instantiate(_smallPopVFX, transform.position, Quaternion.identity);
         _xForce = Random.Range(-15, 15);
         if (_xForce < 0)
         {

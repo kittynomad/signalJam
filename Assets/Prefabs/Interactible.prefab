@@ -356,6 +356,7 @@ MonoBehaviour:
   _reusable: 1
   _cooldownTime: 0.75
   _anim: {fileID: 8425192742399720561}
+  _isShockbox: 0
 --- !u!120 &1755990036057182795
 LineRenderer:
   serializedVersion: 3
