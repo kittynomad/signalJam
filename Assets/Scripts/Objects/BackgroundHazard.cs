@@ -41,22 +41,6 @@ public class BackgroundHazard : MonoBehaviour
         }
     }
 
-    public void KillDog()
-    {
-        if (currentHound != null)
-        {
-            Destroy(currentHound);
-        }
-    }
-
-    public void SickEm(GameObject g)
-    {
-        currentHound = Instantiate(_spawnedThingaling, transform.position, Quaternion.identity);
-        if (currentHound.GetComponent<WeakFace>() != null)
-        {
-            currentHound.GetComponent<WeakFace>().SetTarget(g);
-        }
-    }
 
     private void FixedUpdate()
     {

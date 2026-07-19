@@ -59,7 +59,7 @@ public class WeakFace : MonoBehaviour
     public void MonsterDeath()
     {
         print("hello!");
-        if (isAttacking && transform.position.x > 4)
+        if (isAttacking && transform.position.x > 3)
         {
             print("killed monster!");
             pb.HorrorRiser = false;
