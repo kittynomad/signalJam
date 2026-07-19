@@ -268,4 +268,10 @@ public class PlayerBehaviors : MonoBehaviour, IKillable
         ExitingHorror = true;
     }
 
+    public void Paralyze()
+    {
+        _runSpeed = 0f;
+        _jumpSpeed = 0f;
+    }
+
 }
