@@ -10,6 +10,7 @@ public class RoamingEnemy : MonoBehaviour, IKillable
     [SerializeField] private LayerMask _solidLayer;
     [SerializeField] private float _maxExposedTime;
     private Collider2D coll;
+    [SerializeField] private BackgroundHazard _bH;
 
     private int targetPosIndex = 0;
     private float leeway = 0.1f;
@@ -107,16 +108,18 @@ public class RoamingEnemy : MonoBehaviour, IKillable
         return hg;
     }
 
-    public bool ExposedFunction()
+    public void Hi(GameObject g)
     {
-        if (!behindWall)
-        {
-            exposedTime += Time.deltaTime;
-        }
-        else
-        {
-            exposedTime = 0f;
-        }
-        return exposedTime >= _maxExposedTime;
+        _bH = g.GetComponent<BackgroundHazard>();
+    }
+
+    public void SafeWall()
+    {
+        _bH.KillDog();
+    }
+
+    public void FUUUUUCK()
+    {
+        _bH.SickEm(gameObject);
     }
 }
