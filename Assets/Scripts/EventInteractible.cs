@@ -9,22 +9,23 @@ public class EventInteractible : InteractibleEntity
     [SerializeField] private float _cooldownTime = 0.75f;
 
     [SerializeField] private Animator _anim;
+    [SerializeField] private bool _isShockbox;
 
-    private LineRenderer lr;
+    //private LineRenderer lr;
     private bool connected = false;
     private GameObject player;
     private bool OnCooldown = false;
     void Start()
     {
-        lr = gameObject.GetComponent<LineRenderer>();
-        lr.enabled = false;
+        //lr = gameObject.GetComponent<LineRenderer>();
+        //lr.enabled = false;
     }
 
     private void FixedUpdate()
     {
         if(connected)
         {
-            lr.SetPositions(new Vector3[] {transform.position, player.transform.position });
+            //lr.SetPositions(new Vector3[] {transform.position, player.transform.position });
         }
     }
 
@@ -35,10 +36,17 @@ public class EventInteractible : InteractibleEntity
 
         if (worked)
         {
-            _anim.Play("ButtonTurnOn");
+            if (!_isShockbox)
+            {
+                _anim.Play("ButtonTurnOn");
+            }
+            else
+            {
+                _anim.Play("ShockboxTurnOn");
+            }
             player = collision.gameObject;
             connected = worked;
-            lr.enabled = connected;
+            //lr.enabled = connected;
         }
 
         return worked;
@@ -49,10 +57,17 @@ public class EventInteractible : InteractibleEntity
         bool worked = base.TryUnsubscribeInteraction(collision);
         if (worked)
         {
-            _anim.Play("ButtonTurnOff");
+            if (!_isShockbox)
+            {
+                _anim.Play("ButtonTurnOff");
+            }
+            else
+            {
+                _anim.Play("ShockboxTurnOff");
+            }
             connected = false;
         }
-        lr.enabled = connected;
+        //lr.enabled = connected;
 
         return worked;
     }
