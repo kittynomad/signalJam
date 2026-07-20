@@ -1,0 +1,350 @@
+fileFormatVersion: 2
+guid: 618dbfb222630e14fb4d556d1393bbc6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5979119969384412574
+    second: GAMEJAMTutorialText_0
+  - first:
+      213: 3474973626889634057
+    second: GAMEJAMTutorialText_1
+  - first:
+      213: 1800133283234467935
+    second: GAMEJAMTutorialText_2
+  - first:
+      213: -7214078085601318007
+    second: GAMEJAMTutorialText_3
+  - first:
+      213: -628799452711425540
+    second: GAMEJAMTutorialText_4
+  - first:
+      213: 1653090392481132128
+    second: GAMEJAMTutorialText_5
+  - first:
+      213: -8870967780271833797
+    second: GAMEJAMTutorialText_6
+  - first:
+      213: 673665842165987972
+    second: GAMEJAMTutorialText_7
+  - first:
+      213: -7520995444994703155
+    second: GAMEJAMTutorialText_8
+  - first:
+      213: -1902849949578673531
+    second: GAMEJAMTutorialText_9
+  - first:
+      213: 2260563404357303774
+    second: GAMEJAMTutorialText_10
+  - first:
+      213: 5343849084793932783
+    second: GAMEJAMTutorialText_11
+  - first:
+      213: 4118768833902225707
+    second: GAMEJAMTutorialText_12
+  - first:
+      213: -6534172965762601379
+    second: GAMEJAMTutorialText_13
+  - first:
+      213: 1970910191401650151
+    second: GAMEJAMTutorialText_14
+  - first:
+      213: -587389852874072885
+    second: GAMEJAMTutorialText_15
+  - first:
+      213: 6087566810721613930
+    second: GAMEJAMTutorialText_16
+  - first:
+      213: 1526155876735670591
+    second: GAMEJAMTutorialText_17
+  - first:
+      213: 7110917091755551607
+    second: GAMEJAMTutorialText_18
+  - first:
+      213: 6249617357253788852
+    second: GAMEJAMTutorialText_19
+  - first:
+      213: -659302126951866195
+    second: GAMEJAMTutorialText_20
+  - first:
+      213: 5068109547303680320
+    second: GAMEJAMTutorialText_21
+  - first:
+      213: 8478529645241586049
+    second: GAMEJAMTutorialText_22
+  - first:
+      213: 3186080826706635661
+    second: GAMEJAMTutorialText_23
+  - first:
+      213: -6945775472118516045
+    second: GAMEJAMTutorialText_24
+  - first:
+      213: 844015172790775617
+    second: GAMEJAMTutorialText_25
+  - first:
+      213: 6119582110157571380
+    second: GAMEJAMTutorialText_26
+  - first:
+      213: 5995105834834150368
+    second: GAMEJAMTutorialText_27
+  - first:
+      213: 2337388520026407689
+    second: GAMEJAMTutorialText_28
+  - first:
+      213: 8662058133116168419
+    second: GAMEJAMTutorialText_29
+  - first:
+      213: 2117700257844455854
+    second: GAMEJAMTutorialText_30
+  - first:
+      213: 6945346438996860123
+    second: GAMEJAMTutorialText_31
+  - first:
+      213: -8342266027225862227
+    second: GAMEJAMTutorialText_32
+  - first:
+      213: 4226919829693438319
+    second: GAMEJAMTutorialText_33
+  - first:
+      213: 7318995726295064235
+    second: GAMEJAMTutorialText_34
+  - first:
+      213: -6561919379003365853
+    second: GAMEJAMTutorialText_35
+  - first:
+      213: 4269047323717647625
+    second: GAMEJAMTutorialText_36
+  - first:
+      213: 6608994586567987986
+    second: GAMEJAMTutorialText_37
+  - first:
+      213: 3081057251932519183
+    second: GAMEJAMTutorialText_38
+  - first:
+      213: -887381347209812323
+    second: GAMEJAMTutorialText_39
+  - first:
+      213: -3331169322848686901
+    second: GAMEJAMTutorialText_40
+  - first:
+      213: -4031614567298097946
+    second: GAMEJAMTutorialText_41
+  - first:
+      213: 3108838185297540215
+    second: GAMEJAMTutorialText_42
+  - first:
+      213: 1715296839944867389
+    second: GAMEJAMTutorialText_43
+  - first:
+      213: 4236756620920901316
+    second: GAMEJAMTutorialText_44
+  - first:
+      213: -6714669426230142278
+    second: GAMEJAMTutorialText_45
+  - first:
+      213: -7224213349885590085
+    second: GAMEJAMTutorialText_46
+  - first:
+      213: -5497163962195154889
+    second: GAMEJAMTutorialText_47
+  - first:
+      213: -4306180307105854760
+    second: GAMEJAMTutorialText_48
+  - first:
+      213: -1007939706469914061
+    second: GAMEJAMTutorialText_49
+  - first:
+      213: 7131371421771336370
+    second: GAMEJAMTutorialText_50
+  - first:
+      213: -7696458280575753876
+    second: GAMEJAMTutorialText_51
+  - first:
+      213: 7328172760332423797
+    second: GAMEJAMTutorialText_52
+  - first:
+      213: 7111760129907429039
+    second: GAMEJAMTutorialText_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GAMEJAMTutorialText_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ac56b0116e50da0800000000000000
+      internalID: -5979119969384412574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAMEJAMTutorialText_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9018b9a3a16993030800000000000000
+      internalID: 3474973626889634057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAMEJAMTutorialText_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f505c8ffeab5bf810800000000000000
+      internalID: 1800133283234467935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9043da3964e27624a8d11ee624774d07
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":500.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      GAMEJAMTutorialText_0: -5979119969384412574
+      GAMEJAMTutorialText_1: 3474973626889634057
+      GAMEJAMTutorialText_2: 1800133283234467935
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
