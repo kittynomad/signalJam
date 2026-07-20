@@ -13,11 +13,13 @@ public class EnemyRespawner : MonoBehaviour, IKillable
     [SerializeField] private WeakFace _wF;
 
     private GameObject enemy;
+    private Animator anim;
 
     private int hitsLeft;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        anim = GetComponent<Animator>();
         RespawnEnemy();
         hitsLeft = _hitsToDestroy;
     }
@@ -46,6 +48,7 @@ public class EnemyRespawner : MonoBehaviour, IKillable
     {
         Debug.Log("generator hit");
         hitsLeft--;
+        anim.SetInteger("stage", _hitsToDestroy - hitsLeft);
         if(hitsLeft <= 0)
         {
             OnKill(damageSource);
@@ -58,6 +61,7 @@ public class EnemyRespawner : MonoBehaviour, IKillable
     {
         Destroy(_respawnPoint);
         Destroy(enemy);
-        Destroy(gameObject);
+        Destroy(this);
     }
+
 }
