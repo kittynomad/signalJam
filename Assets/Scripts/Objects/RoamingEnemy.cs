@@ -19,7 +19,9 @@ public class RoamingEnemy : MonoBehaviour, IKillable
     private float leeway = 0.1f;
     private float exposedTime;
     [SerializeField] private bool behindWall;
-    private bool falling;
+    public bool falling;
+
+    public bool moveLock = false;
 
     private Rigidbody2D rb;
 
@@ -51,7 +53,8 @@ public class RoamingEnemy : MonoBehaviour, IKillable
                     falling = false;
                 }
             }
-            rb.MovePosition(rb.position + (moveDirection.x > 0 ? Vector2.left : Vector2.right) * _movespeed + (Physics2D.gravity * rb.gravityScale * Time.fixedDeltaTime));
+            if (!moveLock)
+                rb.MovePosition(rb.position + (moveDirection.x > 0 ? Vector2.left : Vector2.right) * _movespeed + (Physics2D.gravity * rb.gravityScale * Time.fixedDeltaTime));
             for (int i = 0; i < _anim.Length; i++)
             {
                 if (moveDirection.x < 0)
@@ -70,7 +73,7 @@ public class RoamingEnemy : MonoBehaviour, IKillable
                 {
                     _anim[i].Play("EnemyFalling");
                     falling = true;
-                    AudioManager.PlaySound("FunnyScream");
+                    AudioManager.PlaySound("FunnyScream", 0.5f);
                 }
             }
         }
