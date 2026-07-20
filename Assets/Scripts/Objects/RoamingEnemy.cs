@@ -69,11 +69,24 @@ public class RoamingEnemy : MonoBehaviour, IKillable
         {
             if (!falling)
             {
-                for (int i = 0; i < _anim.Length; i++)
+                if (_anim.Length > 4)
                 {
-                    _anim[i].Play("EnemyFalling");
-                    falling = true;
-                    AudioManager.PlaySound("FunnyScream", 0.5f);
+                    for (int i = 0; i < 4; i++)
+                    {
+                        _anim[i].Play("EnemyFalling");
+                        falling = true;
+                        AudioManager.PlaySound("FunnyScream", 0.5f);
+                    }
+                }
+                else
+                {
+
+                    for (int i = 0; i < _anim.Length; i++)
+                    {
+                        _anim[i].Play("EnemyFalling");
+                        falling = true;
+                        AudioManager.PlaySound("FunnyScream", 0.5f);
+                    }
                 }
             }
         }

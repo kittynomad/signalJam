@@ -58,7 +58,8 @@ public class WeakFace : MonoBehaviour
     public void Attack()
     {
         isAttacking = true;
-        targetEnemy.GetComponent<RoamingEnemy>().moveLock = true;
+        if (FUCKYOU)
+            targetEnemy.GetComponent<RoamingEnemy>().moveLock = true;
     }
 
     public void Stop()
