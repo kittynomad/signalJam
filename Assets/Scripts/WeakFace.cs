@@ -16,6 +16,8 @@ public class WeakFace : MonoBehaviour
     [SerializeField] private GameObject _scaries;
     private bool isAttacking;
 
+    [SerializeField] private bool FUCKYOU;
+
 
     public void SetTarget(GameObject g)
     {
@@ -26,19 +28,26 @@ public class WeakFace : MonoBehaviour
     {
         if (targetEnemy != null)
         {
-            transform.position = new Vector2 (targetEnemy.transform.position.x, targetEnemy.transform.position.y + 0.3f);
+            if (!(FUCKYOU && isAttacking))
+            {
+                transform.position = new Vector2(targetEnemy.transform.position.x, targetEnemy.transform.position.y + 0.3f);
+            }
+            
             RoamingEnemy re = targetEnemy.GetComponent<RoamingEnemy>();
             if (!re.BehindWall)
             {
-                _anim.Play("MonsterWeakFace");
+                if (!FUCKYOU)
+                    _anim.Play("MonsterWeakFace");
+                else if (re.falling == false)
+                    _anim.Play("MonsterWeakChomp");
                 pb.HorrorRiser = true;
             }
-            else if (isAttacking && re.BehindWall)
+            else if (isAttacking && re.BehindWall && !(FUCKYOU && isAttacking))
             {
                 pb.HorrorRiser = false;
                 _anim.Play("MonsterWeakDisappear");
             }
-            else if (!isAttacking && re.BehindWall)
+            else if (!isAttacking && re.BehindWall && !(FUCKYOU && isAttacking))
             {
                 pb.HorrorRiser = false;
                 _anim.Play("nothin");
@@ -49,17 +58,19 @@ public class WeakFace : MonoBehaviour
     public void Attack()
     {
         isAttacking = true;
+        targetEnemy.GetComponent<RoamingEnemy>().moveLock = true;
     }
 
     public void Stop()
     {
         isAttacking = false;
+        targetEnemy.GetComponent<RoamingEnemy>().moveLock = false;
     }
 
     public void MonsterDeath()
     {
         print("hello!");
-        if (isAttacking && transform.position.x > 3)
+        if (isAttacking && transform.position.x > 1.5f)
         {
             print("killed monster!");
             pb.HorrorRiser = false;
